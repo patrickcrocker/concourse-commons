@@ -7,6 +7,13 @@ image_resource:
     repository: java
     tag: '8'
 
+params:
+  MAVEN_OPTS:
+  MAVEN_CONFIG:
+  MAVEN_REPO_MIRROR:
+  MAVEN_REPO_USERNAME:
+  MAVEN_REPO_PASSWORD:
+
 inputs:
 - name: pipeline
 - name: concourse-commons
