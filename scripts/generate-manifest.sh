@@ -17,9 +17,9 @@ applications:
 - name: $CF_APP_NAME
   host: $CF_APP_HOST
   path: $ARTIFACT_PATH
-  memory: ${CF_APP_MEMORY:512M}
-  instances: ${CF_APP_INSTANCES:1}
-  timeout: ${CF_APP_TIMEOUT:180}
+  memory: ${CF_APP_MEMORY:-512M}
+  instances: ${CF_APP_INSTANCES:-1}
+  timeout: ${CF_APP_TIMEOUT:-180}
   services: [ $CF_APP_SERVICES ]
   env:
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
