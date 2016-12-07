@@ -7,13 +7,6 @@ image_resource:
     repository: patrickcrocker/lotc
     tag: 'latest'
 
-inputs:
-- name: pipeline
-- name: release
-
-outputs:
-- name: generate-manifest-output
-
 params:
   CF_API_URL:
   CF_SKIP_SSL:
@@ -24,6 +17,14 @@ params:
   CF_APP_MEMORY:
   CF_APP_INSTANCES:
   CF_APP_TIMEOUT:
+
+inputs:
+- name: pipeline
+- concourse-commons
+- name: release
+
+outputs:
+- name: generate-manifest-output
 
 run:
   path: concourse-commons/scripts/generate-manifest.sh
