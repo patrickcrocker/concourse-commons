@@ -20,7 +20,7 @@ params:
 
 inputs:
 - name: pipeline
-- concourse-commons
+- name: concourse-commons
 - name: release
 
 outputs:
