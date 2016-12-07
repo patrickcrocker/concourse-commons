@@ -7,7 +7,7 @@ set -e
 # copy the artifact to the task-output folder
 cp release/$CF_ARTIFACT_ID-*.jar generate-manifest-output/.
 
-pushd prepare-manifest-output
+pushd generate-manifest-output
 
 ARTIFACT_PATH=$(ls $CF_ARTIFACT_ID-*.jar)
 
