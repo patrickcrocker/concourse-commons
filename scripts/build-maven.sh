@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 #
 # All UPERCASE variables are provided externally from this script
 
