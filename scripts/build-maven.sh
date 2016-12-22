@@ -15,8 +15,8 @@ echo "MAVEN_OPTS=$MAVEN_OPTS"
 echo "MAVEN_CONFIG=$MAVEN_CONFIG"
 echo "args=$args"
 
-pushd project
+cd project
   ./mvnw clean package $args
-popd
+cd ..
 
 cp project/target/$ARTIFACT_ID-$version.jar build-output/.
