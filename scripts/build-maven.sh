@@ -11,8 +11,8 @@ args="-DversionNumber=$version"
 [ -n "$MAVEN_REPO_USERNAME" ] && args="$args -Drepository.username=$MAVEN_REPO_USERNAME";
 [ -n "$MAVEN_REPO_PASSWORD" ] && args="$args -Drepository.password=$MAVEN_REPO_PASSWORD";
 
-popd project
+pushd project
   ./mvnw clean package $args
-pushd
+popd
 
 cp project/target/$ARTIFACT_GLOB build-output/.
