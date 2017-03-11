@@ -10,16 +10,15 @@ image_resource:
 params:
   CF_API_URL:
   CF_SKIP_SSL:
-  CF_ARTIFACT_ID:
   CF_APP_NAME:
   CF_APP_HOST:
   CF_APP_SERVICES:
   CF_APP_MEMORY:
   CF_APP_INSTANCES:
   CF_APP_TIMEOUT:
+  ARTIFACT_GLOB:
 
 inputs:
-- name: pipeline
 - name: concourse-commons
 - name: release
 

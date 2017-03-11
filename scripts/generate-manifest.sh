@@ -5,18 +5,19 @@
 set -e
 
 # copy the artifact to the task-output folder
-cp release/$CF_ARTIFACT_ID-*.jar generate-manifest-output/.
+cp release/$ARTIFACT_GLOB generate-manifest-output/.
 
 pushd generate-manifest-output
 
-ARTIFACT_PATH=$(ls $CF_ARTIFACT_ID-*.jar)
+# convert 'artifact-*.jar' into 'artifact-1.0.0-rc.1.jar'
+appPath=$(ls $ARTIFACT_GLOB)
 
 cat <<EOF >manifest.yml
 ---
 applications:
 - name: $CF_APP_NAME
   host: $CF_APP_HOST
-  path: $ARTIFACT_PATH
+  path: $appPath
   memory: ${CF_APP_MEMORY:-512M}
   instances: ${CF_APP_INSTANCES:-1}
   timeout: ${CF_APP_TIMEOUT:-180}
