@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 #
 # All UPERCASE variables are provided externally from this script
 
@@ -11,12 +11,8 @@ args="-DversionNumber=$version"
 [ -n "$MAVEN_REPO_USERNAME" ] && args="$args -Drepository.username=$MAVEN_REPO_USERNAME";
 [ -n "$MAVEN_REPO_PASSWORD" ] && args="$args -Drepository.password=$MAVEN_REPO_PASSWORD";
 
-echo "MAVEN_OPTS=$MAVEN_OPTS"
-echo "MAVEN_CONFIG=$MAVEN_CONFIG"
-echo "args=$args"
-
-cd project
+popd project
   ./mvnw clean package $args
-cd ..
+pushd
 
-cp project/target/$ARTIFACT_ID-$version.jar build-output/.
+cp project/target/$ARTIFACT_GLOB build-output/.

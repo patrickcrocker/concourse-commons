@@ -13,9 +13,9 @@ params:
   MAVEN_REPO_MIRROR:
   MAVEN_REPO_USERNAME:
   MAVEN_REPO_PASSWORD:
+  ARTIFACT_GLOB:
 
 inputs:
-- name: pipeline
 - name: concourse-commons
 - name: project
 - name: version
