@@ -14,4 +14,4 @@ outputs:
 - name: generate-commitish-output
 
 run:
-  path: concourse-commons/scripts/generated-commitish.sh
+  path: concourse-commons/scripts/generate-commitish.sh
