@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: patrickcrocker/lotc
+
+inputs:
+- name: concourse-commons
+- name: version
+
+outputs:
+- name: generate-github-release-output
+
+run:
+  path: concourse-commons/scripts/generate-github-release.sh
