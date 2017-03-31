@@ -1,4 +1,4 @@
-#!/bash
+#!/bin/bash
 
 version=$(cat version/version)
 
